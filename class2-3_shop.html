@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/class2-3_shop.css" rel="stylesheet">
+  <link href="fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="img/icon.png" rel="icon" type="image/x-icon">
+  <title>hailey shop</title>
+</head>
+
+<body>
+  <nav class="nav-container">
+    <div class="nav-item">
+      <h1>Logo</h1>
+    </div>
+    <div class="nav-item" style="flex-grow:1;"></div>
+    <div class="nav-item">
+      <button>products</button>
+    </div>
+    <div class="nav-item">
+      <button>services</button>
+    </div>
+    </div>
+  </nav>
+  <div class="test">
+  </div>
+
+  <div class="main-background">
+    <h4 class="main-title">Buy Our Excellent Shoes! Now On Sale</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla repellendus saepe placeat quo delectus suscipit,
+      similique mollitia? Totam enim quia officia, autem eligendi recusandae debitis beatae in vitae, quis neque.</p>
+    <button class="main-button">BuyNow</button>
+  </div>
+  <div class="boxdouble">
+    <!--width를 %로 부모태그 기준으로 했기에 만약 위의 div태그안에 넣어두면 크기에ㅔ따라 글자 깨지기벗어나기도함 따로주기-->
+    <h3>How we design our shoes</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla repellendus saepe placeat quo delectus suscipit,
+      similique mollitia? Totam enim quia officia, autem eligendi recusandae debitis beatae in vitae, quis neque.</p>
+  </div>
+
+
+
+  <div class="product-container">
+    <div>
+      <i class="fa-solid fa-cart-shopping fa-3x"></i>
+      <!--fontawesome아이콘 html주소 복붙,
+      크기 조정 1. font-size:20px; or 2. fa-3x(3배크기 등)-->
+      <h4>Fast Shipping</h4>
+      <p>lorem ipsum</p>
+    </div>
+    <div>
+      <i class="fa-solid fa-earth-americas fa-3x"></i>
+      <h4>Good Service</h4>
+      <p>lorem ipsum</p>
+    </div>
+    <div>
+      <i class="fa-sharp fa-solid fa-ticket fa-3x"></i>
+      <h4>Free Coupons</h4>
+      <p>lorem ipsum</p>
+    </div>
+    <div>
+      <i class="fa-sharp fa-solid fa-laptop fa-3x"></i>
+      <h4>New Products</h4>
+      <p>lorem ipsum</p>
+    </div>
+  </div>
+
+
+  <div class="shop-bg">
+    <div class="shop-container">
+      <div class="shop-item">
+        <div style="position:relative">
+          <div class="overlay2-wrap">
+            <!--overlay-black 위에 덮을 투명박스 하나두기-->
+            <div class="overlay-black">
+              <span>$60</span>
+            </div>
+          </div>
+          <img src="img/product1-1.jpg">
+        </div>
+      </div>
+      <div class="shop-item">
+        <div style="position:relative">
+          <div class="overlay"></div>
+          <!--애니메이션 최종스타일,붕뜨게하기(position:absolute > relative는 위에 div하나 부모로 만들기)-->
+          <img src="img/product2.jpg">
+        </div>
+      </div>
+      <div class="shop-item">
+        <div style="position:relative">
+          <div class="overlay2-wrap">
+            <!--overlay-black 위에 덮을 투명박스 하나두기-->
+            <div class="overlay-black">
+              <span>$60</span>
+            </div>
+          </div>
+          <img src="img/product3.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="form-background">
+    <div class="form-white">
+      <form>
+        <div class="box-top">
+          <h3>Contact Us</h3>
+          <!--박스생략-->
+          <p>Your Email</p>
+          <input class="form-input" placeholder="email@email.com" type="email">
+        </div>
+        <div class="box-left">
+          <p>First Name</p>
+          <input class="form-input" type="text">
+        </div>
+        <div class="box-right">
+          <p>Last Name</p>
+          <input class="form-input" type="text">
+        </div>
+        <div style="clear:both;"></div>
+        <div class="box-top">
+          <p>Message</p>
+          <textarea class="form-input"></textarea>
+        </div>
+        <div>
+          <input type="checkbox" id="sub">
+          <label for="sub">Subscribe</label>
+          <button class="yello-button">SEND</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+
+</body>
+
+</html>
