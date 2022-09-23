@@ -1,0 +1,379 @@
+@font-face {
+  font-family: 'NanumSquareR';
+  src: url(../font/NanumSquareR.woff);
+}
+
+body {
+  font-family: 'NanumSquareR';
+  transform: rotate(0.03deg);
+}
+
+/*@font-face 받아오고 font-family적용*/
+/*한글폰트는 용량큼 1-2개만 사용하기 > 용량줄이려면 .woff쓰기*/
+/*google fonts > link(html내 연결) , @import(css파일 넣기)*/
+
+/*gulim폰트 썼는데 생각보다 부드럽지 않을 때 > transform:rotate(0.03deg)
+글자를 돌리는건데 아~주 조금 돌리면 매우 부드러워짐*/
+
+.div {
+  box-sizing: border-box;
+}
+
+.body {
+  margin: 0px;
+}
+
+/*div/body미리 설정해두면좋움*/
+/*   https://github.com/necolas/normalize.css/blob/master/normalize.css 
+미리 css파일 위에 호환성 문제 적어두던가
+아니면 html파일에 css파일 링크로 하나 더 걸어둬도 됨
+브라우저간 호환성 문제 해결*/
+
+.main-background {
+  width: 100%;
+  height: 500px;
+  background-image: url(../img/shoes.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 1px;
+  position: relative;
+}
+
+.main-title {
+  color: white;
+  font-size: 40px;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.main-background p {
+  color: white;
+  font-size: 16px;
+  padding-top: 20px;
+  padding-left: 40px;
+}
+
+.main-button {
+  /* margin:50px 440px; */
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 30px;
+  font-size: 16px;
+  color: black;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 150px;
+}
+
+.boxdouble {
+  width: 70%;
+  max-width: 600px;
+  /*최대폭 정해두기 너무 커지지x
+  이건 content영역내에서임
+  */
+  /* box-sizing: border-box; */
+  /*padding과 border영역 포함해서
+  width설정한것
+  그냥 div전체에 적용하면 편함*/
+  height: 40%;
+  background: gainsboro;
+  position: relative;
+  /*붕뜸*/
+  left: 0;
+  right: 0;
+  bottom: 100px;
+  margin: auto;
+  padding: 20px;
+  /* z-index:5;  */
+  /*붕뜬것중 z-index높을 수록 앞에 옴*/
+}
+
+.boxdouble h3 {
+  text-align: center;
+  padding: 20px 40px 0px 40px;
+  font-size: 16px;
+}
+
+.boxdouble p {
+  text-align: center;
+  padding: 15px;
+  font-size: 13px;
+  color: black;
+}
+
+.text-input {
+  padding: 10px;
+  font-size: 20px;
+  border: 2px solid pink;
+  border-radius: 5px;
+  color: pink;
+}
+
+/* input{} 모든 input속성 동일하게
+하지만 input[type=text]{} 라고하면
+type이 text인 input만 선택해서 변경*/
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+/*박스 세로 정렬되어있는 것 >가로정렬 : box 상위 부모클래스에 display:flex속성주기
+박스 센터정렬 justigy-content주기*/
+/*flex이용시 세로배치 flex-direction:column*/
+/*flex-wrap:wrap;  width가 클 때 가로 넘어서 밑으로 흘러감*/
+/*align-items:center; 상하 정렬(height줘서 차이 보기)*/
+
+.flex-item {
+  width: 100px;
+  height: 100px;
+  background-color: gray;
+  margin: 5px;
+}
+
+.nav-container {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  padding: 10px;
+  background-color: pink;
+}
+
+.nav-item {
+  text-align: center;
+  color: white;
+}
+
+.nav-item button {
+  border: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 23px;
+  margin-right: 10px;
+}
+
+/* .test{
+  width:100vw;
+  height:100px;
+  background: gray;
+} */
+/*vw : 브라우저 폭에 비례 vh : 브라우저 높이에 비례*/
+/*rem : 기본 폰트사이즈에 비례(html 태그 폰트사이즈의 10배-16px기본x10=160px)
+rem으로 크기지정하면 기본 font-size커져도 모든 것이 같이 커짐
+but요즘은 ctrl마우스휠로 다같이 커지기에..옛날이야기임*/
+/*em : 내폰트사이즈의 x배 > 내가 15px 이면 20em 은 300px임*/
+
+@media screen and (max-width:1200px) {
+  .main-title{
+    font-size:30px;
+  }
+  .nav-item{
+  width: 100px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .main-title{
+    font-size:20px;
+  }
+}
+
+/*미디어쿼리는 css맨밑에 있어야 잘 작동됨*/
+/*media query,  max-width최대폭 이하면 밑에것들 적용해주세요
+class여러개 적용 가능, media query문법 여러개 사용가능 (큰사이즈>작은사이즈순)*/
+/*breakpoint 기준 px값은 다른사람 따라하는것을 권장 +breakpoint3-4개까지만..
+(태블릿 디자인) 1200px,992px / (모바일 디자인) 768px,576px */
+
+
+.product-container{
+  width:80%;
+  max-width:1000px;
+  margin:auto;
+  margin-top:-20px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.product-container div{
+  width:25%;
+}
+
+@media screen and (max-width:1200px){
+  .product-container div{
+    width:50%;
+  }
+}
+
+/*flex사용할 때 태블릿 2*2하고싶으면
+부모에 flex-wrap,태블릿 미디어쿼리에 width 50%주기*/
+
+@media screen and (max-width:576px){
+  .product-container div{
+    width:100%;
+  }  
+}
+
+/*flex로 pc,태블릿,모바일 설정할 때 width로 조정하기 
+(pc일때 25%, 태블릿 50%, 모바일 100% 한칸에 채우는 정도임)
+부모태그에 flex-wrap넣기
+부모태그에 text-align:center;하기*/
+
+.product-container i{
+  background-color: burlywood;
+  width:100px;
+  height:100px;
+  border-radius: 50px; /*아이콘뒷배경 원형*/
+  padding-top: 25px; /*아이콘 위치 조정*/
+  box-sizing: border-box; /*아이콘 밑에 자리 차지하는거 있는듯하여 조정해주기*/
+  color: white;
+  margin-top: 20px;
+}
+
+
+
+body{
+  margin:0px;
+}
+
+div,input,textarea{
+  box-sizing: border-box;
+}
+
+
+.form-background{
+  background-color: black;
+  padding:30px;
+}
+
+.form-white{
+  background-color: white;
+  padding:30px;
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.box-top{
+  padding:5px;
+  width:100%; /*--그냥넣음--*/
+}
+
+.form-input{
+  width:100%;
+  padding:10px;
+  font-size:20px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.box-left{
+  width:50%;
+  float: left;
+  padding:5px;
+}
+
+.box-right{
+  width:50%;
+  float: left;
+  padding:5px;
+}
+
+.yello-button{
+  padding:10px;
+  display: block;
+  margin-left: auto;
+  float:right;
+  margin-right:3px;
+  background-color: rgb(250,150,80);
+  border:none;
+  border-radius: 5px;
+}
+
+
+
+
+.shop-bg{
+  background-color: #eee;
+  padding:20px;
+}
+
+.shop-container{
+  display:flex; 
+  width:90%;
+  margin:0 auto; /*width:90설정하고서 왼쪽 정렬되있던거 가운데 정렬*/
+  max-width: auto;
+}
+
+.shop-item{
+  width:33%; /*배치 위해*/
+  padding:10px; /*상품사진 간격주기*/
+}
+
+.shop-item img{
+  width:100%; /*상품사진 크기조정*/
+  display: block; 
+  /*밑의 overlay깔았을때, 사진보다 살짝 더 크게 그려지는 이유는 보이지않는 선같은게 있어서임.
+  그거 없애고 크기 맞추기 위해서 display:block;설정*/
+}
+
+.overlay{
+  position:absolute;
+  width:100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  /*투명도 조정 0 투명 ~ 1 완전불투명*/
+  /*애니메이션 시작 0 ~ 끝 1*/
+  transition: all 1s;
+  /*애니메이션 transition주는 것 : all뜻 > 위에있는것들중 스타일뭔가가 변하면 애니메이션 변화주세요~*/
+  /* transition-timing-function: cubic-bezier(0,-0.5,1,1); */
+  /*위에것 : 애니메이션 바뀌는 속도 그래프로 조정할수있는것*/
+}
+
+.overlay:hover{
+  opacity:1;
+}
+/*끝났을때 이렇게 완전불투명도로 바뀌게*/
+/*애니메이션 주는 순서 : 1. 시작스타일 만들기/2.최종스타일 만들기/3.언제최종으로변경할지/4.transition주기*/
+.overlay2-wrap{
+  position:absolute;
+  width:100%;
+  height: 100%;
+  overflow: hidden;
+  /*넘치는 부분 가려줌*/
+}
+
+.overlay2-wrap:hover .overlay-black{
+  margin-top: 50%;
+}
+
+.overlay-black{
+  width:100%;
+  height: 50%;
+  background-color: rgba(0,0,0,0.3);
+  margin-top:100%; /*시작스타일 밑에 두기  but 밑에 넘치는부분 존재
+  위에 부모태그에 overflow:hidden을 주면 벗어나는 범위 가려줌*/
+  transition: all 1s;
+  /*밑에서 위로 올라오게 하기 from에 transform:translate넣고, to에 transform:none넣기*/
+  /*css만으로는 마우스 댔을때 등 정도밖에 구현못함
+  마우스 클릭시 등 다양한 것 만들기 위해서는 JavaScript사용해야함*/
+  /*overlay2-wrap은 흰색 투명(마우스클릭+이미지 변함없기위함)
+  overlay-black이 to 이고 
+  img가 from임 
+  작동은 overlay2-wrap:hover .overlay-black이걸로*/
+}
+
+.overlay-black span{
+  padding:50px;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  display: flex;
+  /*글씨 수직 옮기려면 flex넣어야 움직이더라*/
+}
